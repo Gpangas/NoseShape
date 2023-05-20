@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 #Input Data-----------------------------------------------------------------------------
 R = 70 #Radius (mm) 
-F = np.arange(1,10,0.5) #Fineness
+F = np.arange(0.1,5,0.1) #Fineness
 
 A_w=np.empty((len(F)))
 A_w_parabolla=np.empty((len(F)))
@@ -28,7 +28,7 @@ A_w_LV_Haack=np.empty((len(F)))
 #int _f_ - the function to integrate
 
 for i in range (len(F)):
-    L = F[i]*R
+    L = F[i]*2*R
     #Power Series(Parabolla)-----------------------------------------------------------
     f_parabolla = lambda x: R*np.sqrt(x/L)
     dif_f_parabolla = lambda x: R/(2*np.sqrt(x*L))
